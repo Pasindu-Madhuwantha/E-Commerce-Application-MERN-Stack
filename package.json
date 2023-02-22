@@ -1,7 +1,17 @@
 {
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev":"SET NODE_ENV=DEVELOPMENT& nodemon backend/server",
+    "prod":"SET NODE_ENV=PRODUCTION& nodemon backend/server"
+  },
+
+
   "dependencies": {
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mongoose": "^6.9.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
   }
 }
