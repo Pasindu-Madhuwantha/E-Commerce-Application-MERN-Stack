@@ -7,12 +7,16 @@ const{  getProducts,
         updateProduct, 
         deleteProduct} =require('../controllers/productController')
 
-router.route('/products').get(getProducts);
+const { isAuthenticatedUser, authorizeRoles } = require('../middlewares/auth');
+
+
+router.route('/products').get(isAuthenticatedUser, authorizeRoles('seller'),getProducts);
 router.route('/product/:id').get(getSingleProduct);
 
-router.route('/seller/product/new').post(newProduct);
+router.route('/seller/product/new').post(isAuthenticatedUser,authorizeRoles('seller'), newProduct);
 
-router.route('/seller/product/:id').put(updateProduct).delete(deleteProduct);
+router.route('/seller/product/:id').put(isAuthenticatedUser,authorizeRoles('seller'), updateProduct)
+                                   .delete(isAuthenticatedUser,authorizeRoles('seller'), deleteProduct);
 
 
 module.exports =router;
