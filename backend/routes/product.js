@@ -10,7 +10,7 @@ const{  getProducts,
 const { isAuthenticatedUser, authorizeRoles } = require('../middlewares/auth');
 
 
-router.route('/products').get(isAuthenticatedUser, authorizeRoles('seller'),getProducts);
+router.route('/seller/products').get(isAuthenticatedUser, authorizeRoles('seller'),getProducts);
 router.route('/product/:id').get(getSingleProduct);
 
 router.route('/seller/product/new').post(isAuthenticatedUser,authorizeRoles('seller'), newProduct);
