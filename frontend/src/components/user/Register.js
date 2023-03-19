@@ -19,7 +19,6 @@ const Register = ({ history }) => {
     const [avatar, setAvatar] = useState('')
     const [avatarPreview, setAvatarPreview] = useState('/images/default_avatar.jpg')
 
-    const alert = useAlert();
     const dispatch = useDispatch();
 
     const { isAuthenticated, error, loading } = useSelector(state => state.auth);
@@ -31,11 +30,10 @@ const Register = ({ history }) => {
         }
 
         if (error) {
-            alert.error(error);
             dispatch(clearErrors());
         }
 
-    }, [dispatch, alert, isAuthenticated, error, history])
+    }, [dispatch, isAuthenticated, error, history])
 
     const submitHandler = (e) => {
         e.preventDefault();
@@ -132,7 +130,7 @@ const Register = ({ history }) => {
                                         name='avatar'
                                         className='custom-file-input'
                                         id='customFile'
-                                        accept="iamges/*"
+                                        accept="images/*"
                                         onChange={onChange}
                                     />
                                     <label className='custom-file-label' htmlFor='customFile'>
