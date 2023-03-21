@@ -1,6 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { toast } from 'react-toastify'  // npm install react-toastify
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; // npm install react-toastify
 
 import Loader from '../layout/Loader'
 import MetaData from '../layout/MetaData'
@@ -22,6 +23,8 @@ const Login = ({ history, location }) => {
     useEffect(() => {
         if (isAuthenticated) {
             history.push(redirect)
+            toast.success("Logged in successfully.")
+
         }
 
         if (error) {
@@ -37,6 +40,18 @@ const Login = ({ history, location }) => {
 
     return (
         <Fragment>
+            <ToastContainer
+                position="bottom-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
             {loading ? <Loader /> : (
                 <Fragment>
                     <MetaData title={'Login'} />
