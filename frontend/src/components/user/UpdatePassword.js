@@ -2,7 +2,9 @@ import React, { Fragment, useState, useEffect } from 'react'
 
 import MetaData from '../layout/MetaData'
 
-import { useAlert } from 'react-alert'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; // npm install react-toastify
+
 import { useDispatch, useSelector } from 'react-redux'
 import { updatePassword, clearErrors } from '../../actions/userActions'
 import { UPDATE_PASSWORD_RESET } from '../../constants/userConstants'
@@ -12,7 +14,6 @@ const UpdatePassword = ({ history }) => {
     const [oldPassword, setOldPassword] = useState('')
     const [password, setPassword] = useState('')
 
-    const alert = useAlert();
     const dispatch = useDispatch();
 
     const { error, isUpdated, loading } = useSelector(state => state.user)
@@ -20,12 +21,12 @@ const UpdatePassword = ({ history }) => {
     useEffect(() => {
 
         if (error) {
-            alert.error(error);
+            toast.error(error);
             dispatch(clearErrors());
         }
 
         if (isUpdated) {
-            alert.success('Password updated successfully')
+            toast.success('Password updated successfully')
 
             history.push('/me')
 
@@ -48,6 +49,18 @@ const UpdatePassword = ({ history }) => {
 
     return (
         <Fragment>
+            <ToastContainer
+                position="bottom-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
             <MetaData title={'Change Password'} />
 
             <div className="row wrapper">

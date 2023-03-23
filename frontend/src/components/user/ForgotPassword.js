@@ -1,8 +1,9 @@
 import React, { Fragment, useState, useEffect } from 'react'
 
 import MetaData from '../layout/MetaData'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; // npm install react-toastify
 
-import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
 import { forgotPassword, clearErrors } from '../../actions/userActions'
 
@@ -10,23 +11,21 @@ const ForgotPassword = () => {
 
     const [email, setEmail] = useState('')
 
-    const alert = useAlert();
     const dispatch = useDispatch();
-
+    
     const { error, loading, message } = useSelector(state => state.forgotPassword)
-
     useEffect(() => {
 
         if (error) {
-            alert.error(error);
+            toast.error(error);
             dispatch(clearErrors());
         }
 
         if (message) {
-            alert.success(message)
+            toast.success(message)
         }
 
-    }, [dispatch, alert, error, message])
+    }, [dispatch, error, message])
 
     const submitHandler = (e) => {
         e.preventDefault();
@@ -39,6 +38,18 @@ const ForgotPassword = () => {
 
     return (
         <Fragment>
+            <ToastContainer
+                position="bottom-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
             <MetaData title={'Forgot Password'} />
 
             <div className="row wrapper">
@@ -62,7 +73,7 @@ const ForgotPassword = () => {
                             className="btn btn-block py-3"
                             disabled={loading ? true : false} >
                             Send Email
-                    </button>
+                        </button>
 
                     </form>
                 </div>
