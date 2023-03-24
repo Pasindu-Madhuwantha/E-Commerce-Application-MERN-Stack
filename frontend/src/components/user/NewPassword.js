@@ -2,7 +2,9 @@ import React, { Fragment, useState, useEffect } from 'react'
 
 import MetaData from '../layout/MetaData'
 
-import { useAlert } from 'react-alert'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; // npm install react-toastify
+
 import { useDispatch, useSelector } from 'react-redux'
 import { resetPassword, clearErrors } from '../../actions/userActions'
 
@@ -11,7 +13,6 @@ const NewPassword = ({ history, match }) => {
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
 
-    const alert = useAlert();
     const dispatch = useDispatch();
 
     const { error, success } = useSelector(state => state.forgotPassword)
@@ -19,16 +20,16 @@ const NewPassword = ({ history, match }) => {
     useEffect(() => {
 
         if (error) {
-            alert.error(error);
+            toast.error(error);
             dispatch(clearErrors());
         }
 
         if (success) {
-            alert.success('Password updated successfully')
+            toast.success('Password updated successfully')
             history.push('/login')
         }
 
-    }, [dispatch, alert, error, success, history])
+    }, [dispatch, error, success, history])
 
     const submitHandler = (e) => {
         e.preventDefault();
@@ -42,6 +43,18 @@ const NewPassword = ({ history, match }) => {
 
     return (
         <Fragment>
+            <ToastContainer
+                position="bottom-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
 
             <MetaData title={'New Password Reset'} />
 
