@@ -36,6 +36,7 @@ const Login = ({ history, location }) => {
     const submitHandler = (e) => {
         e.preventDefault();
         dispatch(login(email, password))
+        history.push('/dashboard');
     }
 
     return (
