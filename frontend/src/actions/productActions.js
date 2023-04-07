@@ -180,7 +180,7 @@ export const newReview = (reviewData) => async (dispatch) => {
 }
 
 
-export const getAdminProducts = () => async (dispatch) => {
+export const getSellerProducts = () => async (dispatch) => {
     try {
 
         dispatch({ type: ADMIN_PRODUCTS_REQUEST })

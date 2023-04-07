@@ -3,7 +3,9 @@ import React, { Fragment, useState, useEffect } from 'react'
 import MetaData from '../layout/MetaData'
 import Sidebar from './Sidebar'
 
-import { useAlert } from 'react-alert'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; // npm install react-toastify
+
 import { useDispatch, useSelector } from 'react-redux'
 import { newProduct, clearErrors } from '../../actions/productActions'
 import { NEW_PRODUCT_RESET } from '../../constants/productConstants'
@@ -13,28 +15,19 @@ const NewProduct = ({ history }) => {
     const [name, setName] = useState('');
     const [price, setPrice] = useState(0);
     const [description, setDescription] = useState('');
-    const [category, setCategory] = useState('');
+    const [volume, setCategory] = useState('');
     const [stock, setStock] = useState(0);
     const [seller, setSeller] = useState('');
     const [images, setImages] = useState([]);
     const [imagesPreview, setImagesPreview] = useState([])
 
     const categories = [
-        'Electronics',
-        'Cameras',
-        'Laptops',
-        'Accessories',
-        'Headphones',
-        'Food',
-        "Books",
-        'Clothes/Shoes',
-        'Beauty/Health',
-        'Sports',
-        'Outdoor',
-        'Home'
+        '90 mg/dl',
+        '120 mg/dl',
+        '180 mg/dl'
+       
     ]
 
-    const alert = useAlert();
     const dispatch = useDispatch();
 
     const { loading, error, success } = useSelector(state => state.newProduct);
@@ -42,17 +35,17 @@ const NewProduct = ({ history }) => {
     useEffect(() => {
 
         if (error) {
-            alert.error(error);
+            toast.error(error);
             dispatch(clearErrors())
         }
 
         if (success) {
-            history.push('/admin/products');
-            alert.success('Product created successfully');
+            history.push('/seller/products');
+            toast.success('Product created successfully');
             dispatch({ type: NEW_PRODUCT_RESET })
         }
 
-    }, [dispatch, alert, error, success, history])
+    }, [dispatch, error, success, history])
 
     const submitHandler = (e) => {
         e.preventDefault();
@@ -61,7 +54,7 @@ const NewProduct = ({ history }) => {
         formData.set('name', name);
         formData.set('price', price);
         formData.set('description', description);
-        formData.set('category', category);
+        formData.set('category', volume);
         formData.set('stock', stock);
         formData.set('seller', seller);
 
@@ -96,6 +89,18 @@ const NewProduct = ({ history }) => {
 
     return (
         <Fragment>
+               <ToastContainer
+                position="bottom-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
             <MetaData title={'New Product'} />
             <div className="row">
                 <div className="col-12 col-md-2">
@@ -136,8 +141,8 @@ const NewProduct = ({ history }) => {
                                 </div>
 
                                 <div className="form-group">
-                                    <label htmlFor="category_field">Category</label>
-                                    <select className="form-control" id="category_field" value={category} onChange={(e) => setCategory(e.target.value)}>
+                                    <label htmlFor="category_field">Volume</label>
+                                    <select className="form-control" id="category_field" value={volume} onChange={(e) => setCategory(e.target.value)}>
                                         {categories.map(category => (
                                             <option key={category} value={category} >{category}</option>
                                         ))}

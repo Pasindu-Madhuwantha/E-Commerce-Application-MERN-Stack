@@ -7,7 +7,7 @@ import Sidebar from './Sidebar'
 
 import { useDispatch, useSelector } from 'react-redux'
 
-import { getAdminProducts } from '../../actions/productActions'
+import { getSellerProducts } from '../../actions/productActions'
 import { allOrders } from '../../actions/orderActions'
 import { allUsers } from '../../actions/userActions'
 
@@ -27,7 +27,7 @@ const Dashboard = () => {
     })
 
     useEffect(() => {
-        dispatch(getAdminProducts())
+        dispatch(getSellerProducts())
         dispatch(allOrders())
         dispatch(allUsers())
     }, [dispatch])
@@ -63,7 +63,7 @@ const Dashboard = () => {
                                         <div className="card-body">
                                             <div className="text-center card-font-size">Products<br /> <b>{products && products.length}</b></div>
                                         </div>
-                                        <Link className="card-footer text-white clearfix small z-1" to="/admin/products">
+                                        <Link className="card-footer text-white clearfix small z-1" to="/seller/products">
                                             <span className="float-left">View Details</span>
                                             <span className="float-right">
                                                 <i className="fa fa-angle-right"></i>
@@ -78,7 +78,7 @@ const Dashboard = () => {
                                         <div className="card-body">
                                             <div className="text-center card-font-size">Orders<br /> <b>{orders && orders.length}</b></div>
                                         </div>
-                                        <Link className="card-footer text-white clearfix small z-1" to="/admin/orders">
+                                        <Link className="card-footer text-white clearfix small z-1" to="/seller/orders">
                                             <span className="float-left">View Details</span>
                                             <span className="float-right">
                                                 <i className="fa fa-angle-right"></i>

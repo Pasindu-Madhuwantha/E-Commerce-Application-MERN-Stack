@@ -5,40 +5,42 @@ import { MDBDataTable } from 'mdbreact'
 import MetaData from '../layout/MetaData'
 import Loader from '../layout/Loader'
 import Sidebar from './Sidebar'
+import DeleteProductButton from './DeleteProductButton';
 
-import { useAlert } from 'react-alert'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; // npm install react-toastify
+
 import { useDispatch, useSelector } from 'react-redux'
-import { getAdminProducts, deleteProduct, clearErrors } from '../../actions/productActions'
+import { getSellerProducts, deleteProduct, clearErrors } from '../../actions/productActions'
 import { DELETE_PRODUCT_RESET } from '../../constants/productConstants'
 
 const ProductsList = ({ history }) => {
 
-    const alert = useAlert();
     const dispatch = useDispatch();
 
     const { loading, error, products } = useSelector(state => state.products);
     const { error: deleteError, isDeleted } = useSelector(state => state.product)
 
     useEffect(() => {
-        dispatch(getAdminProducts());
+        dispatch(getSellerProducts());
 
         if (error) {
-            alert.error(error);
+            toast.error(error);
             dispatch(clearErrors())
         }
 
         if (deleteError) {
-            alert.error(deleteError);
+            toast.error(deleteError);
             dispatch(clearErrors())
         }
 
         if (isDeleted) {
-            alert.success('Product deleted successfully');
-            history.push('/admin/products');
+            toast.success('Product deleted successfully');
+            history.push('/seller/products');
             dispatch({ type: DELETE_PRODUCT_RESET })
         }
 
-    }, [dispatch, alert, error, deleteError, isDeleted, history])
+    }, [dispatch, error, deleteError, isDeleted, history])
 
     const setProducts = () => {
         const data = {
@@ -78,12 +80,12 @@ const ProductsList = ({ history }) => {
                 price: `$${product.price}`,
                 stock: product.stock,
                 actions: <Fragment>
-                    <Link to={`/admin/product/${product._id}`} className="btn btn-primary py-1 px-2">
+                    <Link to={`/seller/products/${product._id}`} className="btn btn-primary py-1 px-2">
                         <i className="fa fa-pencil"></i>
                     </Link>
-                    <button className="btn btn-danger py-1 px-2 ml-2" onClick={() => deleteProductHandler(product._id)}>
-                        <i className="fa fa-trash"></i>
-                    </button>
+                     <DeleteProductButton productId={product._id} deleteProductHandler={deleteProductHandler} />
+    
+
                 </Fragment>
             })
         })
@@ -97,6 +99,18 @@ const ProductsList = ({ history }) => {
 
     return (
         <Fragment>
+               <ToastContainer
+                position="bottom-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
             <MetaData title={'All Products'} />
             <div className="row">
                 <div className="col-12 col-md-2">
