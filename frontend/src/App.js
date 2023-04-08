@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 import { useSelector } from 'react-redux';
 
+import UpdateProduct from './components/admin/UpdateProduct';
 import NewProduct from './components/admin/NewProduct';
 import ProductsList from './components/admin/ProductsList';
 import Header from "./components/layout/Header";
@@ -47,6 +48,8 @@ function App() {
       <ProtectedRoute path="/dashboard" isAdmin={true} component={Dashboard} exact />
       <ProtectedRoute path="/seller/products" isAdmin={true} component={ProductsList} exact />
       <ProtectedRoute path="/seller/product" isAdmin={true} component={NewProduct} exact />
+      <ProtectedRoute path="/seller/product/:id" isAdmin={true} component={UpdateProduct} exact />
+
       {!loading && (!isAuthenticated || user.role !== 'seller') && (
           <Footer />
         )}

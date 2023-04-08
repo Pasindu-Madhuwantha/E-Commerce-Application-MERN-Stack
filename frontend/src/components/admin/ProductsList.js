@@ -61,6 +61,11 @@ const ProductsList = ({ history }) => {
                     sort: 'asc'
                 },
                 {
+                    label: 'Volume',
+                    field: 'volume',
+                    sort: 'asc'
+                },
+                {
                     label: 'Stock',
                     field: 'stock',
                     sort: 'asc'
@@ -78,9 +83,10 @@ const ProductsList = ({ history }) => {
                 id: product._id,
                 name: product.name,
                 price: `$${product.price}`,
+                volume:product.volume,
                 stock: product.stock,
                 actions: <Fragment>
-                    <Link to={`/seller/products/${product._id}`} className="btn btn-primary py-1 px-2">
+                    <Link to={`/seller/product/${product._id}`} className="btn btn-primary py-1 px-2">
                         <i className="fa fa-pencil"></i>
                     </Link>
                      <DeleteProductButton productId={product._id} deleteProductHandler={deleteProductHandler} />
