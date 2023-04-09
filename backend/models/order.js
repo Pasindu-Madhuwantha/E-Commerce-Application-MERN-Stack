@@ -102,7 +102,12 @@ const orderSchema = mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now
-    }
+    },
+    trackingNumber: {
+        type: String
+        
+    },
+    
 
 })
 

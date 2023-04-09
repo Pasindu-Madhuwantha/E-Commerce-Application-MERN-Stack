@@ -5,7 +5,9 @@ import MetaData from '../layout/MetaData'
 import Loader from '../layout/Loader'
 import Sidebar from './Sidebar'
 
-import { useAlert } from 'react-alert'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; // npm install react-toastify
+
 import { useDispatch, useSelector } from 'react-redux'
 import { getOrderDetails, updateOrder, clearErrors } from '../../actions/orderActions'
 import { UPDATE_ORDER_RESET } from '../../constants/orderConstants'
@@ -14,7 +16,6 @@ const ProcessOrder = ({ match }) => {
 
     const [status, setStatus] = useState('');
 
-    const alert = useAlert();
     const dispatch = useDispatch();
 
     const { loading, order = {} } = useSelector(state => state.orderDetails)
@@ -28,17 +29,17 @@ const ProcessOrder = ({ match }) => {
         dispatch(getOrderDetails(orderId))
 
         if (error) {
-            alert.error(error);
+            toast.error(error);
             dispatch(clearErrors())
         }
 
 
         if (isUpdated) {
-            alert.success('Order updated successfully');
+            toast.success('Order updated successfully');
             dispatch({ type: UPDATE_ORDER_RESET })
         }
 
-    }, [dispatch, alert, error, isUpdated, orderId])
+    }, [dispatch, error, isUpdated, orderId])
 
 
     const updateOrderHandler = (id) => {
@@ -54,6 +55,18 @@ const ProcessOrder = ({ match }) => {
 
     return (
         <Fragment>
+               <ToastContainer
+                position="bottom-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
             <MetaData title={`Process Order # ${order && order._id}`} />
             <div className="row">
                 <div className="col-12 col-md-2">

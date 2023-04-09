@@ -1,6 +1,23 @@
+import axios from "axios";
+
+const options = {
+    method: 'GET',
+    url: 'https://api-test.dhl.com/track/shipments',
+    params: { trackingNumber: '00340434292135100186' }, // Replace with actual tracking number
+    headers: { 'DHL-API-Key': '7Fq2mfm1XacmrFsIlxWfGDZZG98dvGwI' }, // Replace with actual API key
+};
+
+axios.request(options).then(function (response) {
+	console.log(response.data);
+}).catch(function (error) {
+	console.error(error);
+});
+
+//
+
 const Order = require('../models/order');
 const Product = require('../models/product');
-
+const axios = require('axios');
 const ErrorHandler = require('../utils/errorHandler');
 const catchAsyncErrors = require('../middlewares/catchAsyncErrors');
 
@@ -79,10 +96,62 @@ exports.allOrders = catchAsyncErrors(async (req, res, next) => {
     })
 })
 
+ 
+
+// Define a function to generate a tracking number
+const generateTrackingNumber = async () => {
+    try {
+      const options = {
+        method: 'GET',
+        url: 'https://api-test.dhl.com/track/shipments',
+        params: { trackingNumber: '00340434292135100186' }, // Replace with actual tracking number
+        headers: { 'DHL-API-Key': '7Fq2mfm1XacmrFsIlxWfGDZZG98dvGwI' }, // Replace with actual API key
+      };
+  
+      const response = await axios.request(options);
+  
+      // Extract the tracking number from the response
+      const trackingNumber = response.data.shipmentInfo.trackingNumber;
+  
+      return trackingNumber;
+    } catch (error) {
+      console.error(error);
+      throw new Error('Failed to generate tracking number');
+    }
+  };
+  
+  // Function to send email
+  const sendEmail = async (to, subject, message) => {
+    try {
+      const response = await fetch('https://api.example.com/email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + API_KEY
+        },
+        body: JSON.stringify({
+          to,
+          subject,
+          message
+        })
+      })
+      const data = await response.json()
+      return data.status
+    } catch (error) {
+      console.error(error)
+    }
+  }
   
 
 
+
+
+
+
+
 // Update / Process order - ADMIN  =>   /api/v1/admin/order/:id
+const axios = require('axios');
+
 exports.updateOrder = catchAsyncErrors(async (req, res, next) => {
     const order = await Order.findById(req.params.id)
 
@@ -94,8 +163,21 @@ exports.updateOrder = catchAsyncErrors(async (req, res, next) => {
         await updateStock(item.product, item.quantity)
     })
 
+    if (req.body.status === 'Shipped') {
+        // Call 3rd party API to generate tracking number
+        const trackingNumber = await generateTrackingNumber();
+
+        // Update order tracking number in database
+        order.trackingNumber = trackingNumber;
+        
+        // Send email to customer
+        const email = order.shippingInfo.email;
+        const message = `Your order has been shipped. Your tracking number is ${trackingNumber}.`;
+        await sendEmail(email, message);
+    }
+
     order.orderStatus = req.body.status,
-        order.deliveredAt = Date.now()
+    order.deliveredAt = Date.now()
 
     await order.save()
 

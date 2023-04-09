@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 
+import ProcessOrder from './components/admin/ProcessOrder';
 import { useSelector } from 'react-redux';
-
+import OrdersList from './components/admin/OrdersList';
 import UpdateProduct from './components/admin/UpdateProduct';
 import NewProduct from './components/admin/NewProduct';
 import ProductsList from './components/admin/ProductsList';
@@ -49,6 +50,8 @@ function App() {
       <ProtectedRoute path="/seller/products" isAdmin={true} component={ProductsList} exact />
       <ProtectedRoute path="/seller/product" isAdmin={true} component={NewProduct} exact />
       <ProtectedRoute path="/seller/product/:id" isAdmin={true} component={UpdateProduct} exact />
+      <ProtectedRoute path="/admin/orders" isAdmin={true} component={OrdersList} exact />
+      <ProtectedRoute path="/admin/order/:id" isAdmin={true} component={ProcessOrder} exact />
 
       {!loading && (!isAuthenticated || user.role !== 'seller') && (
           <Footer />
