@@ -3,6 +3,8 @@ const Product = require('../models/product');
 
 const ErrorHandler = require('../utils/errorHandler');
 const catchAsyncErrors = require('../middlewares/catchAsyncErrors');
+const generateTrackingNumber = require('../utils/generateTrackingNumber');
+
 
 // Create a new order   =>  /api/v1/order/new
 exports.newOrder = catchAsyncErrors(async (req, res, next) => {
@@ -79,30 +81,44 @@ exports.allOrders = catchAsyncErrors(async (req, res, next) => {
     })
 })
 
-  
+
 
 
 // Update / Process order - ADMIN  =>   /api/v1/admin/order/:id
 exports.updateOrder = catchAsyncErrors(async (req, res, next) => {
-    const order = await Order.findById(req.params.id)
+    const order = await Order.findById(req.params.id);
 
-    if (order.orderStatus === 'Delivered') {
-        return next(new ErrorHandler('You have already delivered this order', 400))
+    if (order.orderStatus === "Delivered") {
+        return next(new ErrorHandler("You have already delivered this order", 400));
     }
 
-    order.orderItems.forEach(async item => {
-        await updateStock(item.product, item.quantity)
-    })
+    if (req.body.status === "Shipped") {
+        // Generate tracking number
+        const trackingNumber = await generateTrackingNumber(order);
 
-    order.orderStatus = req.body.status,
-        order.deliveredAt = Date.now()
+        // Set tracking number and update order status to "Shipped"
+        order.trackingNumber = trackingNumber;
+        order.orderStatus = "Shipped";
 
-    await order.save()
+        // Update stock and set order status to "Delivered"
+        order.orderItems.forEach(async (item) => {
+            await updateStock(item.product, item.quantity);
+        });
+
+    } else if (req.body.status === "Delivered") {
+
+        order.orderStatus = "Delivered";
+        order.deliveredAt = Date.now();
+    } else {
+        return next(new ErrorHandler("Invalid status", 400));
+    }
+
+    await order.save();
 
     res.status(200).json({
         success: true,
-    })
-})
+    });
+});
 
 async function updateStock(id, quantity) {
     const product = await Product.findById(id);

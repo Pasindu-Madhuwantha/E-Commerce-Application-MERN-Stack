@@ -99,7 +99,7 @@ exports.allOrders = catchAsyncErrors(async (req, res, next) => {
  
 
 // Define a function to generate a tracking number
-const generateTrackingNumber = async () => {
+const generateTrackingNumber1= async () => {
     try {
       const options = {
         method: 'GET',
@@ -208,3 +208,47 @@ exports.deleteOrder = catchAsyncErrors(async (req, res, next) => {
         success: true
     })
 })
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const axios = require("axios");
+
+const generateRandomTrackingNumber = () => {
+  const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  let result = '';
+  for (let i = 0; i < 9; i++) {
+    result += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return `RR${result}CN`;
+};
+
+const generateTrackingNumber = async () => {
+  try {
+    const options = {
+      method: 'POST',
+      url: 'https://api.example.com/register-tracking-number',
+      headers: {
+        'content-type': 'application/json',
+        'api-key': 'your-api-key',
+      },
+      data: {
+        trackingNumber: generateRandomTrackingNumber(),
+        email: 'email@example.com',
+        carrier: 3011,
+        autoDetection: true,
+        orderId: 'MyOrderId'
+      }
+    };
+
+    const response = await axios.request(options);
+
+    // Extract the tracking number from the response
+    const registeredTrackingNumber = response.data.trackingNumber;
+
+    return registeredTrackingNumber;
+  } catch (error) {
+    console.error(error);
+    throw new Error('Failed to generate tracking number');
+  }
+};

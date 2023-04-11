@@ -104,7 +104,8 @@ const orderSchema = mongoose.Schema({
         default: Date.now
     },
     trackingNumber: {
-        type: String
+        type: String,
+        default:'trackingnumber'
         
     },
     

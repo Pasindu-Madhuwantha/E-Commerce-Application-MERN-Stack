@@ -11,15 +11,16 @@ import 'react-toastify/dist/ReactToastify.css'; // npm install react-toastify
 import { useDispatch, useSelector } from 'react-redux'
 import { getOrderDetails, updateOrder, clearErrors } from '../../actions/orderActions'
 import { UPDATE_ORDER_RESET } from '../../constants/orderConstants'
+import { FaCopy } from 'react-icons/fa';
 
 const ProcessOrder = ({ match }) => {
 
     const [status, setStatus] = useState('');
 
     const dispatch = useDispatch();
-
+    const [copySuccess, setCopySuccess] = useState(false);
     const { loading, order = {} } = useSelector(state => state.orderDetails)
-    const { shippingInfo, orderItems, paymentInfo, user, totalPrice, orderStatus } = order
+    const { shippingInfo, orderItems, paymentInfo, user, totalPrice, orderStatus, trackingNumber } = order
     const { error, isUpdated } = useSelector(state => state.order)
 
     const orderId = match.params.id;
@@ -41,6 +42,10 @@ const ProcessOrder = ({ match }) => {
 
     }, [dispatch, error, isUpdated, orderId])
 
+    const handleCopyClick = () => {
+        navigator.clipboard.writeText(order.trackingNumber);
+        setCopySuccess(true);
+    };
 
     const updateOrderHandler = (id) => {
 
@@ -55,7 +60,7 @@ const ProcessOrder = ({ match }) => {
 
     return (
         <Fragment>
-               <ToastContainer
+            <ToastContainer
                 position="bottom-center"
                 autoClose={5000}
                 hideProgressBar={false}
@@ -147,7 +152,26 @@ const ProcessOrder = ({ match }) => {
                                     <button className="btn btn-primary btn-block" onClick={() => updateOrderHandler(order._id)}>
                                         Update Status
                                     </button>
+                                            <br></br>
+                                        <>
+                                            <div className="form-group">
+                                                <label>Tracking Number</label>
+                                                <div className="input-group mb-3">
+                                                    <input type="text" className="form-control" value={order.trackingNumber} readOnly />
+                                                    <button className="btn btn-outline-secondary" type="button" onClick={handleCopyClick}>
+                                                        {copySuccess ? 'Copied!' : <FaCopy />}
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </>
+                                   
+
+
+
+
                                 </div>
+
+
 
                             </div>
                         )}
