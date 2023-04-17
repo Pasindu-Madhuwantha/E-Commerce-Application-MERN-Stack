@@ -15,13 +15,13 @@ const NewProduct = ({ history }) => {
     const [name, setName] = useState('');
     const [price, setPrice] = useState(0);
     const [description, setDescription] = useState('');
-    const [volume, setCategory] = useState('');
+    const [volume, setVolume] = useState('');
     const [stock, setStock] = useState(0);
     const [seller, setSeller] = useState('');
     const [images, setImages] = useState([]);
     const [imagesPreview, setImagesPreview] = useState([])
 
-    const categories = [
+    const volumes = [
         '90 mg/dl',
         '120 mg/dl',
         '180 mg/dl'
@@ -54,7 +54,7 @@ const NewProduct = ({ history }) => {
         formData.set('name', name);
         formData.set('price', price);
         formData.set('description', description);
-        formData.set('category', volume);
+        formData.set('volume', volume);
         formData.set('stock', stock);
         formData.set('seller', seller);
 
@@ -141,10 +141,10 @@ const NewProduct = ({ history }) => {
                                 </div>
 
                                 <div className="form-group">
-                                    <label htmlFor="category_field">Volume</label>
-                                    <select className="form-control" id="category_field" value={volume} onChange={(e) => setCategory(e.target.value)}>
-                                        {categories.map(category => (
-                                            <option key={category} value={category} >{category}</option>
+                                    <label htmlFor="volume_field">Volume</label>
+                                    <select className="form-control" id="volume_field" value={volume} onChange={(e) => setVolume(e.target.value)}>
+                                        {volumes.map(volume => (
+                                            <option key={volume} value={volume} >{volume}</option>
                                         ))}
 
                                     </select>
@@ -160,7 +160,7 @@ const NewProduct = ({ history }) => {
                                     />
                                 </div>
 
-                                <div className="form-group">
+                                {/* <div className="form-group">
                                     <label htmlFor="seller_field">Seller Name</label>
                                     <input
                                         type="text"
@@ -169,7 +169,7 @@ const NewProduct = ({ history }) => {
                                         value={seller}
                                         onChange={(e) => setSeller(e.target.value)}
                                     />
-                                </div>
+                                </div> */}
 
                                 <div className='form-group'>
                                     <label>Images</label>
