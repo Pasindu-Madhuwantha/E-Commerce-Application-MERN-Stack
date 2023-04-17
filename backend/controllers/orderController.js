@@ -4,6 +4,7 @@ const Product = require('../models/product');
 const ErrorHandler = require('../utils/errorHandler');
 const catchAsyncErrors = require('../middlewares/catchAsyncErrors');
 const generateTrackingNumber = require('../utils/generateTrackingNumber');
+const sendEmail = require('../utils/sendEmail');
 
 
 // Create a new order   =>  /api/v1/order/new
@@ -85,6 +86,7 @@ exports.allOrders = catchAsyncErrors(async (req, res, next) => {
 
 
 // Update / Process order - ADMIN  =>   /api/v1/admin/order/:id
+
 exports.updateOrder = catchAsyncErrors(async (req, res, next) => {
     const order = await Order.findById(req.params.id);
 
@@ -105,6 +107,21 @@ exports.updateOrder = catchAsyncErrors(async (req, res, next) => {
             await updateStock(item.product, item.quantity);
         });
 
+        // Send email to user
+        const populateUserName = await Order.findById(order._id).populate('user');
+        const userName = populateUserName.user.name;
+        const message = `Hello ${userName},\n\nYour order (${order._id}) has been shipped and is on its way to you. Your tracking number is ${order.trackingNumber}.\n\nHere are the details of your order:\n\n` +
+        order.orderItems.map(item => (
+          `Product name: ${item.name}\nPrice: ${item.price}\nQuantity: ${item.quantity}\n\n`
+        )).join('') +
+        `Total price: ${order.totalPrice}\n\nThank you for shopping with us!\n\n`;
+
+        await sendEmail({
+          email: order.shippingInfo.email,
+          subject: 'Order Shipped',
+          message,
+        });
+
     } else if (req.body.status === "Delivered") {
 
         order.orderStatus = "Delivered";
@@ -119,6 +136,7 @@ exports.updateOrder = catchAsyncErrors(async (req, res, next) => {
         success: true,
     });
 });
+
 
 async function updateStock(id, quantity) {
     const product = await Product.findById(id);
