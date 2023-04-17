@@ -39,7 +39,7 @@ function App() {
     <div className="App">
       <Header/>
       
-      <Route path="/login" component={Login} />
+      <Route path="/seller/login" component={Login} />
       <Route path="/register" component={Register}></Route>
       <Route path="/password/reset/:token" component={NewPassword} exact />
       <Route path="/password/forgot" component={ForgotPassword} exact />

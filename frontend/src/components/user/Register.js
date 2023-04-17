@@ -2,7 +2,8 @@ import React, { Fragment, useState, useEffect } from 'react'
 
 import MetaData from '../layout/MetaData'
 
-import { useAlert } from 'react-alert'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; // npm install react-toastify
 import { useDispatch, useSelector } from 'react-redux'
 import { register, clearErrors } from '../../actions/userActions'
 
@@ -12,9 +13,10 @@ const Register = ({ history }) => {
         name: '',
         email: '',
         password: '',
+        confirmPassword: '',
     })
 
-    const { name, email, password } = user;
+    const { name, email, password, confirmPassword } = user;
 
     const [avatar, setAvatar] = useState('')
     const [avatarPreview, setAvatarPreview] = useState('/images/default_avatar.jpg')
@@ -30,6 +32,7 @@ const Register = ({ history }) => {
         }
 
         if (error) {
+            toast.error(error);
             dispatch(clearErrors());
         }
 
@@ -38,6 +41,11 @@ const Register = ({ history }) => {
     const submitHandler = (e) => {
         e.preventDefault();
 
+        if (password !== confirmPassword) {
+            toast.error('Passwords do not match');
+            return;
+        }
+
         const formData = new FormData();
         formData.set('name', name);
         formData.set('email', email);
@@ -45,6 +53,8 @@ const Register = ({ history }) => {
         formData.set('avatar', avatar);
 
         dispatch(register(formData))
+        history.push('/dashboard');
+
     }
 
     const onChange = e => {
@@ -69,6 +79,19 @@ const Register = ({ history }) => {
     return (
         <Fragment>
 
+            <ToastContainer
+                position="bottom-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
+
             <MetaData title={'Register User'} />
 
             <div className="row wrapper">
@@ -77,7 +100,7 @@ const Register = ({ history }) => {
                         <h1 className="mb-3">Register</h1>
 
                         <div className="form-group">
-                            <label htmlFor="email_field">Name</label>
+                            <label htmlFor="name_field">Name</label>
                             <input
                                 type="name"
                                 id="name_field"
@@ -108,6 +131,18 @@ const Register = ({ history }) => {
                                 className="form-control"
                                 name='password'
                                 value={password}
+                                onChange={onChange}
+                            />
+                        </div>
+
+                        <div className="form-group">
+                            <label htmlFor="confirm_password_field">Confirm Password</label>
+                            <input
+                                type="password"
+                                id="confirm_password_field"
+                                className="form-control"
+                                name='confirmPassword'
+                                value={confirmPassword}
                                 onChange={onChange}
                             />
                         </div>
