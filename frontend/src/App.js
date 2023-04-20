@@ -8,7 +8,7 @@ import NewProduct from './components/admin/NewProduct';
 import ProductsList from './components/admin/ProductsList';
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route , Redirect } from 'react-router-dom';
 import Login from "./components/user/Login";
 import Register from "./components/user/Register";
 import Profile from './components/user/Profile';
@@ -21,7 +21,7 @@ import Dashboard from './components/admin/Dashboard'
 
 
 
-import ProtectedRoute from './components/route/ProtectedRoute';
+import ProtectedRoute from './components/route/ProtectedRouteSeller';
 import { loadUser } from "./actions/userActions";
 import store  from './store';
 
@@ -50,8 +50,9 @@ function App() {
       <ProtectedRoute path="/seller/products" isAdmin={true} component={ProductsList} exact />
       <ProtectedRoute path="/seller/product" isAdmin={true} component={NewProduct} exact />
       <ProtectedRoute path="/seller/product/:id" isAdmin={true} component={UpdateProduct} exact />
-      <ProtectedRoute path="/admin/orders" isAdmin={true} component={OrdersList} exact />
-      <ProtectedRoute path="/admin/order/:id" isAdmin={true} component={ProcessOrder} exact />
+      <ProtectedRoute path="/seller/orders" isAdmin={true} component={OrdersList} exact />
+      <ProtectedRoute path="/seller/order/:id" isAdmin={true} component={ProcessOrder} exact />
+      {/* { <Redirect from="/" to="/seller/login" /> } */}
 
       {!loading && (!isAuthenticated || user.role !== 'seller') && (
           <Footer />

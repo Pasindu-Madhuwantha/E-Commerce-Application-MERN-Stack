@@ -8,9 +8,9 @@ const { registerUser,
     resetPassword, 
     getUserProfile,
     updatePassword,
-    updateProfile} = require('../controllers/authController');
+    updateProfile} = require('../controllers/authControllerSeller');
 
-const { isAuthenticatedUser } = require('../middlewares/auth')
+const { isAuthenticatedUser } = require('../middlewares/authSeller')
 
 router.route('/register').post(registerUser);
 router.route('/login').post(loginUser);

@@ -64,7 +64,7 @@ exports.myOrders = catchAsyncErrors(async (req, res, next) => {
 })
 
 
-// Get all orders - ADMIN  =>   /api/v1/admin/orders/
+// Get all orders - seller  =>   /api/v1/seller/orders/
 exports.allOrders = catchAsyncErrors(async (req, res, next) => {
     const sellerId = req.user.id; // Assuming you are using Passport.js for authentication and user data is stored in req.user
     const orders = await Order.find({ "orderItems.product": { "$in": await Product.find({ user: sellerId }, { _id: 1 }) } });
@@ -85,7 +85,7 @@ exports.allOrders = catchAsyncErrors(async (req, res, next) => {
 
 
 
-// Update / Process order - ADMIN  =>   /api/v1/admin/order/:id
+// Update / Process order - seller  =>   /api/v1/seller/order/:id
 
 exports.updateOrder = catchAsyncErrors(async (req, res, next) => {
     const order = await Order.findById(req.params.id);
@@ -146,7 +146,7 @@ async function updateStock(id, quantity) {
     await product.save({ validateBeforeSave: false })
 }
 
-// Delete order   =>   /api/v1/admin/order/:id
+// Delete order   =>   /api/v1/seller/order/:id
 exports.deleteOrder = catchAsyncErrors(async (req, res, next) => {
     const order = await Order.findById(req.params.id)
 

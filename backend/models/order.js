@@ -32,7 +32,7 @@ const orderSchema = mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: 'User'
+        ref: 'Seller'   // must change to user when intergrated
     },
     orderItems: [
         {

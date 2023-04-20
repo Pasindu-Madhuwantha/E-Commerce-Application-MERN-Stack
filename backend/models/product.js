@@ -70,7 +70,7 @@ const prodcutSchema = new mongoose.Schema({
     ],
     user: {
         type: mongoose.Schema.ObjectId,
-        ref: 'User',
+        ref: 'Seller',
         required: true
     },
     createdAt:{

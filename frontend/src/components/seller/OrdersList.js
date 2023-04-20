@@ -4,26 +4,40 @@ import { MDBDataTable } from 'mdbreact'
 
 import MetaData from '../layout/MetaData'
 import Loader from '../layout/Loader'
+import Sidebar from './Sidebar'
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; // npm install react-toastify
 import { useDispatch, useSelector } from 'react-redux'
-import { myOrders, clearErrors } from '../../actions/orderActions'
+import { allOrders, deleteOrder, clearErrors } from '../../actions/orderActionsSeller'
+import { DELETE_ORDER_RESET } from '../../constants/orderConstants'
 
-const ListOrders = () => {
+const OrdersList = ({ history }) => {
 
     const dispatch = useDispatch();
 
-    const { loading, error, orders } = useSelector(state => state.myOrders);
+    const { loading, error, orders } = useSelector(state => state.allOrders);
+    const { isDeleted } = useSelector(state => state.order)
 
     useEffect(() => {
-        dispatch(myOrders());
+        dispatch(allOrders());
 
         if (error) {
             toast.error(error);
             dispatch(clearErrors())
         }
-    }, [dispatch, error])
+
+        if (isDeleted) {
+            toast.success('Order deleted successfully');
+            history.push('/admin/orders');
+            dispatch({ type: DELETE_ORDER_RESET })
+        }
+
+    }, [dispatch, error, isDeleted, history])
+
+    const deleteOrderHandler = (id) => {
+        dispatch(deleteOrder(id))
+    }
 
     const setOrders = () => {
         const data = {
@@ -34,8 +48,8 @@ const ListOrders = () => {
                     sort: 'asc'
                 },
                 {
-                    label: 'Num of Items',
-                    field: 'numOfItems',
+                    label: 'No of Items',
+                    field: 'numofItems',
                     sort: 'asc'
                 },
                 {
@@ -51,7 +65,6 @@ const ListOrders = () => {
                 {
                     label: 'Actions',
                     field: 'actions',
-                    sort: 'asc'
                 },
             ],
             rows: []
@@ -60,23 +73,29 @@ const ListOrders = () => {
         orders.forEach(order => {
             data.rows.push({
                 id: order._id,
-                numOfItems: order.orderItems.length,
+                numofItems: order.orderItems.length,
                 amount: `$${order.totalPrice}`,
                 status: order.orderStatus && String(order.orderStatus).includes('Delivered')
                     ? <p style={{ color: 'green' }}>{order.orderStatus}</p>
                     : <p style={{ color: 'red' }}>{order.orderStatus}</p>,
-                actions:
-                    <Link to={`/order/${order._id}`} className="btn btn-primary">
+                actions: <Fragment>
+                    <Link to={`/seller/order/${order._id}`} className="btn btn-primary py-1 px-2">
                         <i className="fa fa-eye"></i>
                     </Link>
+                    <button className="btn btn-danger py-1 px-2 ml-2" onClick={() => deleteOrderHandler(order._id)}>
+                        <i className="fa fa-trash"></i>
+                    </button>
+                </Fragment>
             })
         })
 
         return data;
     }
 
+
     return (
         <Fragment>
+               
                <ToastContainer
                 position="bottom-center"
                 autoClose={5000}
@@ -89,23 +108,32 @@ const ListOrders = () => {
                 pauseOnHover
                 theme="light"
             />
+            <MetaData title={'All Orders'} />
+            <div className="row">
+                <div className="col-12 col-md-2">
+                    <Sidebar />
+                </div>
 
-            <MetaData title={'My Orders'} />
+                <div className="col-12 col-md-10">
+                    <Fragment>
+                        <h1 className="my-5">All Orders</h1>
 
-            <h1 className="my-5">My Orders</h1>
+                        {loading ? <Loader /> : (
+                            <MDBDataTable
+                                data={setOrders()}
+                                className="px-3"
+                                bordered
+                                striped
+                                hover
+                            />
+                        )}
 
-            {loading ? <Loader /> : (
-                <MDBDataTable
-                    data={setOrders()}
-                    className="px-3"
-                    bordered
-                    striped
-                    hover
-                />
-            )}
+                    </Fragment>
+                </div>
+            </div>
 
         </Fragment>
     )
 }
 
-export default ListOrders
+export default OrdersList

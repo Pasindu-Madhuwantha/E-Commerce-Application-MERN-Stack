@@ -9,7 +9,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; // npm install react-toastify
 
 import { useDispatch, useSelector } from 'react-redux'
-import { getOrderDetails, updateOrder, clearErrors } from '../../actions/orderActions'
+import { getOrderDetails, updateOrder, clearErrors } from '../../actions/orderActionsSeller'
 import { UPDATE_ORDER_RESET } from '../../constants/orderConstants'
 import { FaCopy } from 'react-icons/fa';
 
@@ -90,6 +90,7 @@ const ProcessOrder = ({ match }) => {
                                     <p><b>Name:</b> {user && user.name}</p>
                                     <p><b>Phone:</b> {shippingInfo && shippingInfo.phoneNo}</p>
                                     <p className="mb-4"><b>Address:</b>{shippingDetails}</p>
+                                    <p><b>Email:</b> {shippingInfo && shippingInfo.email}</p>
                                     <p><b>Amount:</b> ${totalPrice}</p>
 
                                     <hr />
@@ -152,19 +153,19 @@ const ProcessOrder = ({ match }) => {
                                     <button className="btn btn-primary btn-block" onClick={() => updateOrderHandler(order._id)}>
                                         Update Status
                                     </button>
-                                            <br></br>
-                                        <>
-                                            <div className="form-group">
-                                                <label>Tracking Number</label>
-                                                <div className="input-group mb-3">
-                                                    <input type="text" className="form-control" value={order.trackingNumber} readOnly />
-                                                    <button className="btn btn-outline-secondary" type="button" onClick={handleCopyClick}>
-                                                        {copySuccess ? 'Copied!' : <FaCopy />}
-                                                    </button>
-                                                </div>
+                                    <br></br>
+                                    <>
+                                        <div className="form-group">
+                                            <label>Tracking Number</label>
+                                            <div className="input-group mb-3">
+                                                <input type="text" className="form-control" value={order.trackingNumber} readOnly />
+                                                <button className="btn btn-outline-secondary" type="button" onClick={handleCopyClick}>
+                                                    {copySuccess ? 'Copied!' : <FaCopy />}
+                                                </button>
                                             </div>
-                                        </>
-                                   
+                                        </div>
+                                    </>
+
 
 
 

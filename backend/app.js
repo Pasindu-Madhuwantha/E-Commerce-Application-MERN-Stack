@@ -19,8 +19,8 @@ app.use(fileUpload());
 
 //import all routes
 const products = require('./routes/product');
-const auth = require('./routes/auth');
-const order = require('./routes/order');
+const auth = require('./routes/authSeller');
+const order = require('./routes/orderSeller');
 
 app.use('/api/v1', products)
 app.use('/api/v1',auth)

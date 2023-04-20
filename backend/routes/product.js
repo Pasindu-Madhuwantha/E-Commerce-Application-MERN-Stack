@@ -7,7 +7,7 @@ const{  getProducts,
         updateProduct, 
         deleteProduct} =require('../controllers/productController')
 
-const { isAuthenticatedUser, authorizeRoles } = require('../middlewares/auth');
+const { isAuthenticatedUser, authorizeRoles } = require('../middlewares/authSeller');
 
 
 router.route('/seller/products').get(isAuthenticatedUser, authorizeRoles('seller'),getProducts);
