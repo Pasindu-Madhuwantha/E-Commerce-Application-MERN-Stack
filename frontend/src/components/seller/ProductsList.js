@@ -11,8 +11,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; // npm install react-toastify
 
 import { useDispatch, useSelector } from 'react-redux'
-import { getSellerProducts, deleteProduct, clearErrors } from '../../actions/productActions'
-import { DELETE_PRODUCT_RESET } from '../../constants/productConstants'
+import { getSellerProducts, deleteProduct, clearErrors } from '../../actionsSeller/productActions'
+import { DELETE_PRODUCT_RESET } from '../../constantsSeller/productConstants'
 
 const ProductsList = ({ history }) => {
 

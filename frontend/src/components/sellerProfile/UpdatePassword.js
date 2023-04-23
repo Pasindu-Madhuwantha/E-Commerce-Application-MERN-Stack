@@ -6,8 +6,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; // npm install react-toastify
 
 import { useDispatch, useSelector } from 'react-redux'
-import { updatePassword, clearErrors } from '../../actions/userActions'
-import { UPDATE_PASSWORD_RESET } from '../../constants/userConstants'
+import { updatePassword, clearErrors } from '../../actionsSeller/userActions'
+import { UPDATE_PASSWORD_RESET } from '../../constantsSeller/userConstants'
 
 const UpdatePassword = ({ history }) => {
 

@@ -36,7 +36,7 @@ import {
     LOGOUT_SUCCESS,
     LOGOUT_FAIL,
     CLEAR_ERRORS
-} from '../constants/userConstants'
+} from '../constantsSeller/userConstants'
 
 // Login
 export const login = (email, password) => async (dispatch) => {

@@ -5,8 +5,8 @@ import 'react-toastify/dist/ReactToastify.css'; // npm install react-toastify
 import MetaData from '../layout/MetaData'
 
 import { useDispatch, useSelector } from 'react-redux'
-import { updateProfile, loadUser, clearErrors } from '../../actions/userActions'
-import { UPDATE_PROFILE_RESET } from '../../constants/userConstants'
+import { updateProfile, loadUser, clearErrors } from '../../actionsSeller/userActions'
+import { UPDATE_PROFILE_RESET } from '../../constantsSeller/userConstants'
 
 const UpdateProfile = ({ history }) => {
 

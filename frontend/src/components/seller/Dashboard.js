@@ -7,9 +7,9 @@ import Sidebar from './Sidebar'
 
 import { useDispatch, useSelector } from 'react-redux'
 
-import { getSellerProducts } from '../../actions/productActions'
-import { allOrders } from '../../actions/orderActionsSeller'
-import { allUsers } from '../../actions/userActions'
+import { getSellerProducts } from '../../actionsSeller/productActions'
+import { allOrders } from '../../actionsSeller/orderActionsSeller'
+import { allUsers } from '../../actionsSeller/userActions'
 
 const Dashboard = () => {
 

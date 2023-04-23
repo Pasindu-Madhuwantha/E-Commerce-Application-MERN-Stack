@@ -7,7 +7,7 @@ import Loader from '../layout/Loader'
 import MetaData from '../layout/MetaData'
 
 import { useDispatch, useSelector } from 'react-redux'
-import { login, clearErrors } from '../../actions/userActions'
+import { login, clearErrors } from '../../actionsSeller/userActions'
 
 const Login = ({ history, location }) => {
 

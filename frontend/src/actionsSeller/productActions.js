@@ -31,7 +31,7 @@ import {
     DELETE_REVIEW_FAIL,
     CLEAR_ERRORS
 
-} from '../constants/productConstants'
+} from '../constantsSeller/productConstants'
 
 export const getProducts = (keyword = '', currentPage = 1, price, category, rating = 0) => async (dispatch) => {
     try {

@@ -5,7 +5,7 @@ import MetaData from '../layout/MetaData'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; // npm install react-toastify
 import { useDispatch, useSelector } from 'react-redux'
-import { register, clearErrors } from '../../actions/userActions'
+import { register, clearErrors } from '../../actionsSeller/userActions'
 
 const Register = ({ history }) => {
 

@@ -5,7 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; // npm install react-toastify
 
 import { useDispatch, useSelector } from 'react-redux'
-import { forgotPassword, clearErrors } from '../../actions/userActions'
+import { forgotPassword, clearErrors } from '../../actionsSeller/userActions'
 
 const ForgotPassword = () => {
 

@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import '../../App.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { logout } from '../../actions/userActions'
+import { logout } from '../../actionsSeller/userActions'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -34,7 +34,7 @@ const Header = () => {
       <nav className="navbar row">
         <div className="col-12 col-md-3">
           <div className="navbar-brand">
-            <img src="/images/shopit_logo.png" />
+            <img src="/images/shopit_logo.png" width="50%" height="50%"/>
           </div>
         </div>
 

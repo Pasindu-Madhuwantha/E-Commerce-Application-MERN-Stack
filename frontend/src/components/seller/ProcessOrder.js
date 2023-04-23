@@ -9,8 +9,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; // npm install react-toastify
 
 import { useDispatch, useSelector } from 'react-redux'
-import { getOrderDetails, updateOrder, clearErrors } from '../../actions/orderActionsSeller'
-import { UPDATE_ORDER_RESET } from '../../constants/orderConstants'
+import { getOrderDetails, updateOrder, clearErrors } from '../../actionsSeller/orderActionsSeller'
+import { UPDATE_ORDER_RESET } from '../../constantsSeller/orderConstants'
 import { FaCopy } from 'react-icons/fa';
 
 const ProcessOrder = ({ match }) => {

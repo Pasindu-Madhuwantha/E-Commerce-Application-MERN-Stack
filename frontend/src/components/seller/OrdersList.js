@@ -9,8 +9,8 @@ import Sidebar from './Sidebar'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; // npm install react-toastify
 import { useDispatch, useSelector } from 'react-redux'
-import { allOrders, deleteOrder, clearErrors } from '../../actions/orderActionsSeller'
-import { DELETE_ORDER_RESET } from '../../constants/orderConstants'
+import { allOrders, deleteOrder, clearErrors } from '../../actionsSeller/orderActionsSeller'
+import { DELETE_ORDER_RESET } from '../../constantsSeller/orderConstants'
 
 const OrdersList = ({ history }) => {
 

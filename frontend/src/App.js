@@ -1,28 +1,28 @@
 import React, { useEffect, useState } from 'react'
 
-import ProcessOrder from './components/admin/ProcessOrder';
+import ProcessOrder from './components/seller/ProcessOrder';
 import { useSelector } from 'react-redux';
-import OrdersList from './components/admin/OrdersList';
-import UpdateProduct from './components/admin/UpdateProduct';
-import NewProduct from './components/admin/NewProduct';
-import ProductsList from './components/admin/ProductsList';
+import OrdersList from './components/seller/OrdersList';
+import UpdateProduct from './components/seller/UpdateProduct';
+import NewProduct from './components/seller/NewProduct';
+import ProductsList from './components/seller/ProductsList';
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import { BrowserRouter as Router, Routes, Route , Redirect } from 'react-router-dom';
-import Login from "./components/user/Login";
-import Register from "./components/user/Register";
-import Profile from './components/user/Profile';
-import UpdateProfile from './components/user/UpdateProfile';
-import UpdatePassword from './components/user/UpdatePassword';
-import ForgotPassword from './components/user/ForgotPassword';
-import NewPassword from './components/user/NewPassword';
+import Login from "./components/sellerProfile/Login";
+import Register from "./components/sellerProfile/Register";
+import Profile from './components/sellerProfile/Profile';
+import UpdateProfile from './components/sellerProfile/UpdateProfile';
+import UpdatePassword from './components/sellerProfile/UpdatePassword';
+import ForgotPassword from './components/sellerProfile/ForgotPassword';
+import NewPassword from './components/sellerProfile/NewPassword';
 
-import Dashboard from './components/admin/Dashboard'
+import Dashboard from './components/seller/Dashboard'
 
 
 
 import ProtectedRoute from './components/route/ProtectedRouteSeller';
-import { loadUser } from "./actions/userActions";
+import { loadUser } from "./actionsSeller/userActions";
 import store  from './store';
 
 function App() {
