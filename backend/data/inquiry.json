@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Amali",
+        "email": "amali@gmail.com",
+        "mobileNumber": "0776564668",
+        "inquiry": "Product not delivered"
+    },
+    {
+        "name": "Kamal",
+        "email": "k@gmail.com",
+        "mobileNumber": "0776557889",
+        "inquiry": "Product not delivered"
+    },
+    {
+        "name": "Saman",
+        "email": "saman@gmail.com",
+        "mobileNumber": "0723344556",
+        "inquiry": "Product not delivered"
+    }
+]
