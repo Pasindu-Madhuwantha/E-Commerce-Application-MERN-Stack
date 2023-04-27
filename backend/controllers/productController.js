@@ -43,7 +43,7 @@ exports.newProduct = catchAsyncErrors (async(req,res,next) =>{
     })
 })
 
-//Get all products => /api/v1/products?keywords=apple 
+//Get all products => /api/v1/products
 exports.getProducts = catchAsyncErrors(async (req, res, next) => {
     const resPerPage = 20;
     const productCount = await Product.countDocuments();
