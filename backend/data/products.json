@@ -1,147 +1,195 @@
 [
-    {
-        "name" : "SanDisk Ultra 128GB SDXC UHS-I Memory Card up to 80MB/s",
-        "price" : "45.89",
-        "description" : "Ultra-fast cards (2) to take better pictures and Full HD videos (1) with your compact to mid-range point-and-shoot cameras and camcorders. With SanDisk Ultra SDXC UHS-I cards you’ll benefit from faster downloads, high capacity, and better performance to capture and store 128GB (5) of high quality pictures and Full HD video (1). Take advantage of ultra-fast read speeds of up to 80MB/s (3) to save time moving photos and videos from the card to your computer. From a leader in flash memory storage, SanDisk Ultra SDXC UHS-I cards are compatible with SDHC and SDXC digital devices, and come with a 10-year limited warranty (6).",
-        "ratings" : 4.5,
-        "images" : [{
-            "public_id" : "products/dsvbpny402gelwugv2le",
-            "url" : "https://res.cloudinary.com/bookit/image/upload/v1608062030/products/dsvbpny402gelwugv2le.jpg"
-        }],
-        "category" : "Electronics",
-        "seller" : "Ebay",
-        "stock" : 50,
-        "numOfReviews" : 32,
-        "reviews": []
-    },
-    {
-        "name" : "CAN USB FD Adapter (GC-CAN-USB-FD)",
-        "price" : "315.00",
-        "description" : "Monitor a CAN network, write a CAN program and communicate with industrial, medical, automotive or other CAN based device. Connect CAN FD and CAN networks to a computer via USB with the CAN USB FD adapter.",
-        "ratings" : 1.65,
-        "images" : [{
-            "public_id" : "products/61oXGZ60GfL_fixco9",
-            "url" : "https://res.cloudinary.com/bookit/image/upload/v1614877995/products/61oXGZ60GfL_fixco9.jpg"
-        }],
-        "category" : "Electronics",
-        "seller" : "Amazon",
-        "stock" : 0,
-        "numOfReviews" : 2,
-        "reviews": []
-    },
-    {
-        "name" : "CHARMOUNT Full Motion TV Wall Mount Swivel",
-        "price" : "26.99 ",
-        "description" : "CHARMOUNT TV MOUNT UNIVERSAL DESIGN - Has your TV been received? Tilted TV wall mount is for 26 - 55 TVs weight up to 88lbs 40 kg. Our tilt TV mount has a compatible faceplate that fits VESA 75X75mm (3x3). CHARMOUNT TV MOUNT UNIVERSAL DESIGN - Has your TV been received? Tilted TV wall mount is for 26 - 55 TVs weight up to 88lbs 40 kg. Our tilt TV mount has a compatible faceplate that fits VESA 75X75mm (3x3) CHARMOUNT TV MOUNT UNIVERSAL DESIGN - Has your TV been received? Tilted TV wall mount is for 26 - 55 TVs weight up to 88lbs 40 kg. Our tilt TV mount has a compatible faceplate that fits VESA 75X75mm (3x3).",
-        "ratings" : 3.5,
-        "images" : [{
-            "public_id" : "products/chairmount_nuubea",
-            "url" : "https://res.cloudinary.com/bookit/image/upload/v1606231285/products/chairmount_nuubea.jpg"
-        }],
-        "category" : "Electronics",
-        "seller" : "Amazon",
-        "stock" : 1,
-        "numOfReviews" : 12,
-        "reviews": []
-    },
-    {
-        "name" : "Bose QuietComfort 35 II Wireless Bluetooth Headphones",
-        "price" : "299.00 ",
-        "description" : "What happens when you clear away the noisy distractions of the world? Concentration goes to the next level. You get deeper into your music, your work, or whatever you want to focus on. That’s the power of Bose QuietComfort 35 wireless headphones II. Put them on and get closer to what you’re most passionate about. And that’s just the beginning. QuietComfort 35 wireless headphones II are now enabled with Bose AR",
-        "ratings" : 4.5,
-        "images" : [{
-            "public_id" : "products/headphones_t2afnb",
-            "url" : "https://res.cloudinary.com/bookit/image/upload/v1606231281/products/headphones_t2afnb.jpg"
-        }],
-        "category" : "Headphones",
-        "seller" : "Amazon",
-        "stock" : 11,
-        "numOfReviews" : 112,
-        "reviews": []
-    },
-    {
-        "name" : "Apple AirPods with Charging Case (Wired)",
-        "price" : "126.99 ",
-        "description" : "AirPods with Charging Case: More than 24 hours listening time, up to 18 hours talk time; AirPods (single charge): Up to 5 hours listening time, up to 3 hours talk time or 15 minutes in the case equals up to 3 hours listening time or up to 2 hours talk time.",
-        "ratings" : 4.8,
-        "images" : [{
-            "public_id" : "products/airpords_e5cqqr",
-            "url" : "https://res.cloudinary.com/bookit/image/upload/v1606231282/products/airpords_e5cqqr.jpg"
-        }],
-        "category" : "Electronics",
-        "seller" : "Amazon",
-        "stock" : 122,
-        "numOfReviews" : 2671,
-        "reviews": []
-    },
-    {
-        "name" : "Cable Boom Microphone - Volume Control for Playstation PS4 or Xbox",
-        "price" : "27.99",
-        "description" : "DESIGN INFO - 3.5mm male to 2.5mm male audio cable adapter with Upgraded Flexible, Detachable Boom Mic which also enables rotary Volume Control and Mute Switch. SteelFlex Arm for perfect microphone positioning. INPUT COMPATIBILITY - Devices supporting 3.5mm audio output such as gaming PS4 / Xbox One controller, PC, Laptop, iPhone and Android Phone.",
-        "ratings" : 4.1,
-        "images" : [{
-            "public_id" : "products/eahhtj1bkn1k9gjgd3hn",
-            "url" : "https://res.cloudinary.com/bookit/image/upload/v1606233125/products/eahhtj1bkn1k9gjgd3hn.jpg"
-        }],
-        "category" : "Accessories",
-        "seller" : "Amazon",
-        "stock" : 1123,
-        "numOfReviews" : 6,
-        "reviews": []
-    },
-    {
-        "name" : "Nikon D3500 W/ AF-P DX NIKKOR 18-55mm f/3.5-5.6G VR Black ",
-        "price" : "496.95",
-        "description" : "You don't need to be a photographer to know a great photo when you see one. And you don't need to be a photographer to take a great photo—you just need the D3500. It's as easy to use as a point-and-shoot, but it takes beautiful DSLR photos and videos that get noticed. It feels outstanding in your hands, sturdy and balanced with controls where you want them. It's compact, durable and versatile, ideal for travel. And it works seamlessly with compatible smartphones, making it easier than ever to share your great photos. Even if you've never picked up a DSLR camera, you can take beautiful pictures with D3500.",
-        "ratings" : 4.7,
-        "images" : [{
-            "public_id" : "products/camera_ridc0i",
-            "url" : "https://res.cloudinary.com/bookit/image/upload/v1606231283/products/camera_ridc0i.jpg"
-        }],
-        "category" : "Cameras",
-        "seller" : "Amazon",
-        "stock" : 131,
-        "numOfReviews" : 222,
-        "reviews": []
-    },
-    {
-        "name" : "Apple MacBook Air (13-inch, 8GB RAM, 256GB SSD Storage) - Space Gray ",
-        "price" : "949.99",
-        "description" : "Stunning 13.3-inch Retina display with True Tone technology, Backlit Magic Keyboard and Touch ID, Tenth-generation, Intel Core i3 processor, Intel Iris Plus Graphics, Fast SSD storage, 8GB of memory, Stereo speakers with wider stereo sound",
-        "ratings" : 4.9,
-        "images" : [{
-            "public_id" : "products/macbook_o2cj2k",
-            "url" : "https://res.cloudinary.com/bookit/image/upload/v1606231282/products/macbook_o2cj2k.jpg"
-        }],
-        "category" : "Laptops",
-        "seller" : "Amazon",
-        "stock" : 0,
-        "numOfReviews" : 56,
-        "reviews": []
-    },
-    {
-        "name" : "Kauffman Orchards Homegrown McIntosh Apples",
-        "price" : "2.75",
-        "description" : "McIntosh is a pretty red/green apple with white flesh Homegrown in Kauffman's orchard in healthy Lancaster County soil McIntosh apples are famous for snacking, pies, salads, and applesauce Protected with soft, high-density foam for safe shipping to your door Not for sale to California, Oregon, or Washington due to state laws governing fresh produce",
-        "ratings" : 5,
-        "images" : [
-            {
-                "public_id" : "products/wmoa49q9e70ze9xtcra2",
-                "url" : "https://res.cloudinary.com/bookit/image/upload/v1606293153/products/wmoa49q9e70ze9xtcra2.jpg"
-            },
-            {
-                "public_id" : "products/i0k1wdwi5hrpmzwxvsds",
-                "url" : "https://res.cloudinary.com/bookit/image/upload/v1606293152/products/i0k1wdwi5hrpmzwxvsds.jpg" 
-            },
-            {
-                "public_id" : "products/bshmuo9qisfhz4azvnsd",
-                "url" : "https://res.cloudinary.com/bookit/image/upload/v1606293153/products/bshmuo9qisfhz4azvnsd.jpg"
-            }
+  {
+    "price": 19.66,
+    "ratings": 4.5,
+    "stock": 120,
+    "numOfReviews": 15,
+    "name": "NOW Foods, Vitamin D-3, 5,000 IU, 120 Softgels",
+    "description": "NOW Vitamin D-3 softgels supply this key vitamin in a highly-absorbable liquid softgel form. Vitamin D is normally obtained from the diet or produced by the skin from the ultraviolet energy of the sun. However, is it not abundant in food. As more people avoid sun exposure, Vitamin D supplementation becomes even more necessary to ensure that your body receives and adequate supply.\r\n\r\nSuggested use\r\nTake 1 softgel every 2 days with a fat-containing meal, or as directed by your healthcare practitioner.\r\n\r\nOther ingredients\r\nSoftgel capsule (bovine gelatin, water, glycerin) and extra virgin olive oil.\r\n\r\nNot manufactured with yeast, wheat, gluten, soy, corn, milk, egg, fish or shellfish ingredients. Produced in a GMP facility that processes other ingredients containing this allergens.",
+    "category": "120 mg/dl",
+    "seller": "iHerb",
+    "images": [
+      {
+        "public_id": "products/rgkomqxcper6uucvmvaj",
+        "url": "https://res.cloudinary.com/dblkajsqm/image/upload/v1682260041/products/rgkomqxcper6uucvmvaj.avif"
+      },
+      {
+        "public_id": "products/ygphryolitx8aenyww7f",
+        "url": "https://res.cloudinary.com/dblkajsqm/image/upload/v1682260044/products/ygphryolitx8aenyww7f.avif"
+      }
     ],
-        "category" : "Food",
-        "seller" : "Kauffman's Fruit Farm & Market",
-        "stock" : 500,
-        "numOfReviews" : 1,
-        "reviews": []
-    }
+    "reviews": []
+  },
+  {
+    "price": 33.78,
+    "ratings": 3.5,
+    "stock": 20,
+    "numOfReviews": 12,
+    "name": "Swanson, Sinus Helper , 60 Capsules",
+    "description": "Most of us have experienced the discomfort and annoyance of sinus issues, especially at inconvenient times. In fact, sinus problems affect 31 million people in the United States with 16 million visiting their doctors to get relief. They seem to happen throughout the year, no matter the season.\r\n\r\nIt’s important to have healthy sinuses and nasal passages so they can function properly. However, some people may experience sinus issues more frequently than others. When they come out of nowhere, they’re quite unpleasant and seem to linger on for longer than expected.\r\n\r\nSuggested use\r\nAs a dietary supplement, take one capsule two times per day with food and water.",
+    "category": "90 mg/dl",
+    "seller": "Swanson",
+    "images": [
+      {
+        "public_id": "products/dhyheehwmqjtpveswlwt",
+        "url": "https://res.cloudinary.com/dblkajsqm/image/upload/v1682261027/products/dhyheehwmqjtpveswlwt.avif"
+      },
+      {
+        "public_id": "products/ci0csdfza7w7d4ytwy7u",
+        "url": "https://res.cloudinary.com/dblkajsqm/image/upload/v1682261030/products/ci0csdfza7w7d4ytwy7u.avif"
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "price": 38.32,
+    "ratings": 5,
+    "stock": 0,
+    "numOfReviews": 45,
+    "name": "Nature's Answer, Licorice Root, Fluid Extract, Alcohol-Free, 2,000 mg, 1 fl oz (30 ml)",
+    "description": "Super Concentrated with 2,000mg per serving, Nature's Answer® Licorice Extract promotes a healthy immune system. It supports healthy digestion and harmonizes the body energies.\r\n\r\nSuggested use\r\nAs a dietary supplement, take 1-2 ml (33-67 drops) three (3) times a day in a small amount of water. \r\n\r\nShake well before use.",
+    "category": "90 mg/dl",
+    "seller": "Swanson",
+    "images": [
+      {
+        "public_id": "products/elw3wlpkc8a5u2i4ayyt",
+        "url": "https://res.cloudinary.com/dblkajsqm/image/upload/v1682261489/products/elw3wlpkc8a5u2i4ayyt.avif"
+      },
+      {
+        "public_id": "products/iyjpeyzg1qc2wbsbtohs",
+        "url": "https://res.cloudinary.com/dblkajsqm/image/upload/v1682261492/products/iyjpeyzg1qc2wbsbtohs.avif"
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "price": 43.84,
+    "ratings": 4,
+    "stock": 60,
+    "numOfReviews": 24,
+    "name": "NOW Foods, Ultra Omega-3, 500 EPA / 250 DHA, 180 Enteric Coated Softgels",
+    "description": "Supportive but not conclusive research shows that consumption of EPA and DHA omega-3 fatty acids may reduce the risk of coronary heart disease. \r\n\r\nThis Fish Oil Concentrate is manufactured under strict quality control standards. It is tested to be free of potentially harmful levels of contaminants such as PCB's, dioxins, mercury and other heavy metals. Those who experience nausea or reflux from other fish oils should find this enteric-coated, odor controlled softgel easier to tolerate.\r\n\r\nSuggested use\r\nTake 1 softgel 1 to 2 times daily with food.\r\n\r\nOther ingredients\r\nSoftgel capsule (bovine gelatin (BSE-free), glycerin, enteric coating, water), and d-alpha tocopherol.\r\n\r\nContains fish (anchovies). d-alpha tocopherol from non-gmo soy.\r\n\r\nNot manufactured with yeast, wheat, gluten, milk, egg or shellfish ingredients. Produced in a GMP facility that processes other ingredients containing these allergens.",
+    "category": "180 mg/dl",
+    "seller": "iHerb",
+    "images": [
+      {
+        "public_id": "products/ykijb6bgm9v7euscbibc",
+        "url": "https://res.cloudinary.com/dblkajsqm/image/upload/v1682262199/products/ykijb6bgm9v7euscbibc.avif"
+      },
+      {
+        "public_id": "products/k5e4wkec6tuyoldgdapc",
+        "url": "https://res.cloudinary.com/dblkajsqm/image/upload/v1682262201/products/k5e4wkec6tuyoldgdapc.avif"
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "price": 9.15,
+    "ratings": 3.5,
+    "stock": 0,
+    "numOfReviews": 12,
+    "name": "Natrol, Melatonin, Time Release, Extra Strength, 100 Tablets",
+    "description": "Description\r\nSleep\r\nFall Asleep Faster, Stay Asleep Longer\r\n100% Drug-Free\r\nVegetarian\r\nDietary Supplement\r\nNatrol® Melatonin 5 mg Time Release:\r\n\r\n2-Layer Tablet–outer layer releases Melatonin quickly to help you fall asleep faster, followed by the controlled release of an inner layer to help you sleep through the night\r\nContains Vitamin B-6 to support the body's natural production of Melatonin\r\nHelps establish normal sleep patterns\r\n100% Drug-free and non-habit forming\r\nMelatonin is a nighttime sleep aid for occasional sleeplessness.\r\n\r\nSuggested use\r\nTake 1 tablet 20 minutes before bedtime.",
+    "category": "90 mg/dl",
+    "seller": "Natrol",
+    "images": [
+      {
+        "public_id": "products/jgpyzqmdbhokcx0oglmq",
+        "url": "https://res.cloudinary.com/dblkajsqm/image/upload/v1682314006/products/jgpyzqmdbhokcx0oglmq.avif"
+      },
+      {
+        "public_id": "products/laghnrvooshmspxykie9",
+        "url": "https://res.cloudinary.com/dblkajsqm/image/upload/v1682314009/products/laghnrvooshmspxykie9.avif"
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "price": 45.49,
+    "ratings": 3,
+    "stock": 40,
+    "numOfReviews": 10,
+    "name": "Orgain, Plant Protein Plus Collagen, Creamy Chocolate Fudge, 1.6lb (726 g)",
+    "description": "Whole Body Wellness\r\nBeauty, Lean Muscle and Gut Support\r\n10 g Collagen Peptides*\r\n25 g Protein*\r\n1 Billion Probiotics*\r\nGood, Clean Nutrition™\r\nHigher Standards\r\nNo Dairy Ingredients\r\nNo Soy Ingredients\r\nGluten Free\r\nNo Artificial Preservatives or Flavors\r\nKeto Friendly\r\n\r\nFor a whole body wellness solution that keeps you feelin' and lookin' great, this plant protein + collagen powder gives you the whole package. Our plant protein was crafted for maximum nutrition, and our grass-fed collagen helps with hair, skin, and nail support. Plus, there are 1 billion probiotics* for gut support.\r\n\r\nThe Scoop: 15 g plant protein, 10 g collagen peptides, 1 billion probiotics, 9 g fiber and 0 g sugar",
+    "category": "180 mg/dl",
+    "seller": "Orgain",
+    "images": [
+      {
+        "public_id": "products/ky6v49eoqosqgcvk5ps3",
+        "url": "https://res.cloudinary.com/dblkajsqm/image/upload/v1682315938/products/ky6v49eoqosqgcvk5ps3.avif"
+      },
+      {
+        "public_id": "products/vxa5jwsddp5pbza5bcqy",
+        "url": "https://res.cloudinary.com/dblkajsqm/image/upload/v1682315941/products/vxa5jwsddp5pbza5bcqy.avif"
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "price": 35.24,
+    "ratings": 4.5,
+    "stock": 20,
+    "numOfReviews": 5,
+    "name": "Garden of Life, Dr. Formulated Probiotics, Once Daily Women's, 50 Billion, 30 Vegetarian Capsules",
+    "description": "Shelf Stable - Potency Promise\r\nNo Refrigeration Required\r\nVaginal + Digestive + Immune System\r\n50 Billion Guaranteed - 16 Probiotic Strains\r\nSupports Women's Health\r\nSupports Immune System & Digestive Health\r\nNon GMO Project Verified\r\nGluten Free\r\nDairy Free\r\nSoy Free\r\nRaw Probiotic Supplement\r\nVegetarian\r\nShelf Stable\r\n\r\nFormulated by America's Brain-Health Expert, a Board-Certified Neurologist, #1 New York Times best-selling author, Fellow of the American College of Nutrition, and expert in the human Microbiome.\r\n\r\nDr. Perlmutter created this unique formula exclusively for Women, with a high count of beneficial probiotics made from diverse strains that are resistant to stomach acid and bile, to support women's digestive and immune system health.",
+    "category": "120 mg/dl",
+    "seller": "iHerb",
+    "images": [
+      {
+        "public_id": "products/o8u8mbcm4qot4lrjobh2",
+        "url": "https://res.cloudinary.com/dblkajsqm/image/upload/v1682316328/products/o8u8mbcm4qot4lrjobh2.avif"
+      },
+      {
+        "public_id": "products/nihkcicjcdjaeujnrohp",
+        "url": "https://res.cloudinary.com/dblkajsqm/image/upload/v1682316331/products/nihkcicjcdjaeujnrohp.avif"
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "price": 15.39,
+    "ratings": 4,
+    "stock": 27,
+    "numOfReviews": 6,
+    "name": "California Gold Nutrition, Lactobif 25 Billion",
+    "description": "Your body's natural microbiome of helpful bacteria can become unbalanced from a poor diet or other factors, causing unpleasant symptoms and affecting your daily life. A daily probiotic may be the answer to preventing this problem. California Gold Nutrition Cran-Max®️ LactoBif®️ Probiotic combines probiotics with a bioavailable cranberry concentrate to support digestive and urinary tract health.*\r\n\r\nProbiotic + Cranberry Benefits\r\nThis unique formula contains 8 active and clinically researched probiotic strains, including 5 Lactobacilli and 3 Bifidobacteria.¹ When taken on a regular basis, probiotics may help balance intestinal flora which is key for digestive health and overall well being.*\r\n\r\nIn addition, this supplement features Cran-Max®, a pure and natural cranberry concentrate that has been clinically shown to promote a healthy urinary tract.* Cran-Max® is delivered by a patented delivery system called Bio-Shield® Technology, which protects the concentrate as it passes through the digestive system until it reaches the lower gastrointestinal tract where it can be better absorbed",
+    "category": "90 mg/dl",
+    "seller": "Cran-max",
+    "images": [
+      {
+        "public_id": "products/sjoar0w98qpud6hhekle",
+        "url": "https://res.cloudinary.com/dblkajsqm/image/upload/v1682317232/products/sjoar0w98qpud6hhekle.avif"
+      },
+      {
+        "public_id": "products/uqg1aifqnha8de9zn958",
+        "url": "https://res.cloudinary.com/dblkajsqm/image/upload/v1682317235/products/uqg1aifqnha8de9zn958.avif"
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "price": 10.89,
+    "ratings": 4,
+    "stock": 60,
+    "numOfReviews": 13,
+    "name": "NaturalCare, Lung-Saver, 60 Capsules",
+    "description": "Support for Healthy Lungs\r\n\r\nLung-Saver™ is an advanced dietary supplement and guide that combines the highest quality and most potent forms of Ayurvedic herbs with N-Acetyl cysteine (NAC), a powerful antioxidant, based on the latest scientific research to help provide nutritive support for normal respiratory function and efficiency. Ayurveda is an ancient Hindu medical system still practiced in many parts of the world that has provided modern researchers with a wealth of botanical products to evaluate. To help optimize respiratory health, Lung-Saver™ combines several natural ingredients with an educational guide to help support healthy lungs.\r\n\r\nRespiratory Problems\r\n\r\nRespiratory problems can have an impact on every aspect of health because while some take the ability to breathe easily for granted, for many restricted breathing is a constant obstacle to daily activity. Obstruction in the lungs can cause a decrease in the exhaled air flow. This is caused by a narrowing or blockage of the airways, which can be an indication of unhealthy respiratory function. Respiratory restrictions can also cause a decrease in the total volume of air that the lungs are able to hold. This can be due to a decrease in the elasticity of the lungs themselves or caused by a problem related to the expansion of the chest wall during inhalation. Restricted breathing can be exhausting and impact every aspect of daily life. The inability to breathe freely keeps many from enjoying every day pursuits and physical activity.\r\n\r\nThere are many things that may cause respiratory distress:\r\n\r\nAsthma\r\nBronchitis\r\nEmphysema\r\nSmoking\r\nEnvironmental pollution\r\nOccupational contaminants",
+    "category": "90 mg/dl",
+    "seller": "NaturalCare",
+    "images": [
+      {
+        "public_id": "products/zosmbh9tp9jhf1gzj4by",
+        "url": "https://res.cloudinary.com/dblkajsqm/image/upload/v1682317933/products/zosmbh9tp9jhf1gzj4by.avif"
+      },
+      {
+        "public_id": "products/vflefazjbu4ydvhgjukf",
+        "url": "https://res.cloudinary.com/dblkajsqm/image/upload/v1682317937/products/vflefazjbu4ydvhgjukf.avif"
+      },
+      {
+        "public_id": "products/m6udsyz7hp363h12jsio",
+        "url": "https://res.cloudinary.com/dblkajsqm/image/upload/v1682317939/products/m6udsyz7hp363h12jsio.avif"
+      }
+    ],
+    "reviews": []
+  }
 ]
