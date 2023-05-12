@@ -45,16 +45,8 @@ const orderSchema = mongoose.Schema({
             price: {
                 type: Number,
                 required: true
-            },
-            product: {
-                type: String,
-                required: true
             }
-            /*product: {
-                type: mongoose.Schema.Types.ObjectId,
-                required: true,
-                ref: 'Product'
-            }*/
+            
         }
     ],
     paymentInfo: {

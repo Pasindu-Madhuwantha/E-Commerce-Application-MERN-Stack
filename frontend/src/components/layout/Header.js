@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-
+import { Route, Link } from 'react-router-dom'
 
 import '../../App.css'
 
@@ -11,9 +11,9 @@ const Header = () => {
             <nav className="navbar row">
                 <div className="col-12 col-md-3">
                     <div className="navbar-brand">
-                        
-                            <img src="" />
-                        
+                        <Link to="/">
+                            <img src="/images/logo.jpeg" width="50%" height="50%" />
+                        </Link>    
                     </div>
                 </div>
 
@@ -22,12 +22,10 @@ const Header = () => {
                 </div>
 
                 <div className="col-12 col-md-3 mt-4 mt-md-0 text-center">
-                    
-                        <span id="cart" className="ml-3">Cart</span>
-                        <span className="ml-1" id="cart_count"></span>
-                    
+                    <Link to="/login" className="btn ml-4" id="login_btn">Login</Link>
 
-
+                    <span id="cart" className="ml-3">Cart</span>
+                    <span className="ml-1" id="cart_count">2</span>
                 </div>
             </nav>
         </Fragment>
